@@ -1,0 +1,30 @@
+{
+	"name": "jsonstore",
+	"version": "0.0.1",
+	"description": "Easily store your data just by sending HTTP requests",
+	"homepage": "https://jsonstore.io",
+	"repository": "bluzi/jsonstore",
+	"license": "MIT",
+	"dependencies": {
+		"milligram": "latest"
+	},
+	"devDependencies": {
+		"bower": "^1.8.0",
+		"browser-sync": "^2.18.2",
+		"ncp": "^2.0.0",
+		"npm-run-all": "^3.1.2",
+		"onchange": "^3.2.0",
+		"rimraf": "^2.5.4"
+	},
+	"scripts": {
+		"start": "run-s clean build bower && run-p watch serve",
+		"clean": "rimraf dist",
+		"bower": "ncp bower_components dist/lib",
+		"build": "ncp src dist",
+		"watch": "onchange src/* -- run-s build",
+		"serve": "browser-sync --no-notify start -s dist -f dist",
+		"test": "run-s clean build bower",
+		"postinstall": "bower i",
+		"prestart": "npm i"
+	}
+}

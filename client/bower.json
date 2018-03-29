@@ -1,0 +1,7 @@
+{
+	"name": "milligram-starter",
+	"private": "true",
+	"dependencies": {
+		"milligram": "latest"
+	}
+}
