@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:200');
+
+html, body {
+	font-family: 'Fira Sans', sans-serif;	
+	background-color: #fafafa;
+}
+
+div {
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+} 
+
+.right {
+	text-align: right;
+}
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.inline {
+	display: inline-block;
+}
+
+nav .container {
+    padding-bottom: 0;
+	padding-top: 0;
+}
+
+nav ul li,
+nav h1 {
+	display: inline;
+    font-size: 1.4rem;
+    line-height: 5.2rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+nav ul li a .icon {
+	font-size: 2.2rem;
+}
+
+nav ul li a {
+	font-family: 'Lato', sans-serif;	
+}
+
+nav ul {
+    float: right;
+}
+
+nav h1 {
+	font-size: 2.0rem;
+    color: #606c76;
+	position: relative;
+}
+
+nav h1 .colored {
+	color: #606c76;
+	transition-duration: 2s;
+}
+
+nav h1:hover .colored {
+	color: #9b4dca;
+}
+
+nav ul {
+	list-style: none;
+    margin-bottom: 0;
+    margin-right: 5rem;
+}
+
+nav ul li {
+	float: left;
+    margin-bottom: 0;
+    margin-left: 2.5rem;
+    position: relative;
+}
+
+header {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%, -50%);
+}
+
+header .container {
+    border-top: 0;
+	text-align: center;
+    max-width: 100rem;
+    width: 50%;
+}
+
+.colored {
+	color: #9b4dca;
+}
+
+header .endpoint-controls button {
+	width: 100%;
+}
+
+header h1 {
+	font-size: 5.6rem;
+}
+
+header .endpoint-controls input {
+	color: #666;
+	background-color: white;
+}
+
+footer {
+	position: absolute;
+	bottom: 120px;
+	width: 100%;
+	text-align: center;
+}
+
+footer .heart, footer a {
+	color: #9b4dca;
+	margin: 0 10px;
+}
+
+.instructions {
+	color: #666;
+	font-size: 1.6rem;
+	padding: 0 30px;
+	margin-top: 30px;
+	line-height: 30px;
+}
+
+.instructions h3 {
+	margin: 0 10px;
+	color: #606c76;
+}
