@@ -43,7 +43,7 @@ curl -XGET -H "Content-type: application/json" 'http://www.jsonstore.io/cf024bb8
 ### JavaScript
 #### POST
 ```js
-fetch ('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1', {
+fetch('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1', {
   headers: {
     'Content-type': 'application/json'
   },
@@ -62,7 +62,7 @@ const user = await fetch('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9da
 
 #### PUT
 ```js
-fetch ('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1/age', {
+fetch('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1/age', {
   headers: {
     'Content-type': 'application/json'
   },
@@ -73,7 +73,7 @@ fetch ('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e6
 
 #### DELETE
 ```js
-fetch ('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1', {
+fetch('http://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1', {
   method: 'DELETE',
 });
 ```
