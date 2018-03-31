@@ -4,6 +4,12 @@
 <p align="center">
 Start storing your data on the cloud in 2 seconds
 </p>
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" height="75" />
+<img src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" height="75" />
+  <img src="https://cdn-images-1.medium.com/max/960/1*pxfq-ikL8zPE3RyGB2xbng.png" height="75" />
+  <img src="https://www.vectorlogo.zone/logos/js_webpack/js_webpack-card.png" height="75" />
+</p>
 
 ## jsonstore.io
 jsonstore.io offers a free, secured and JSON based cloud datastore for small projects.
