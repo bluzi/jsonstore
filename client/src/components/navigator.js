@@ -12,11 +12,12 @@ const Navigator = () =>
                     <a href="/">Home</a>
                 </li>
 
-                <li>
+                {/* <li>
                     <a href="/about">About</a>
-                </li>
+                </li> */}
 
                 <li>
+
                     <a href="https://www.github.com/bluzi/jsonstore">
                         <i className="icon ion-social-github"></i>&nbsp;
                     </a>
