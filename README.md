@@ -1,8 +1,10 @@
 <p align="center">
-<img src="logo.png" />
+<a href="https://www.jsonstore.io/">
+  <img src="logo.png" />
+<a />
 </p>
 <p align="center">
-Start storing your data on the cloud in 2 seconds
+Start storing your data in the cloud in 2 seconds
 </p>
 <p align="center">
 <img src="https://wpoffice365.com/wp-content/uploads/2017/07/react-logo.png" height="75" />
