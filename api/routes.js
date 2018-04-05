@@ -20,12 +20,16 @@ router.get(/^\/[0-9a-z]{64}/, (req, res) =>
         .catch(() => res.send({ result: false }))
 );
 
-router.post(/^\/[0-9a-z]{64}/, (req, res) =>
+router.post(/^\/[0-9a-z]{64}/, (req, res) => {
+    if (!req.is('application/json')) {
+        return res.status(400).send('Bad Rquest');
+    }
+
     database
         .post(req.path, req.body)
         .then(() => res.send({ result: true }))
         .catch(() => res.send({ result: false }))
-);
+});
 
 router.put(/^\/[0-9a-z]{64}/, (req, res) =>
     database
