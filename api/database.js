@@ -2,10 +2,10 @@ const firebase = require('firebase');
 
 if (!process.env.FIREBASE_CONFIG) {
     module.exports = { 
-        get: console.log,
-        post: console.log,
-        put: console.log,
-        delete: console.log,
+        get: () => (console.log(arguments), Promise.resolve()),
+        post: () => (console.log(arguments), Promise.resolve()),
+        put: () => (console.log(arguments), Promise.resolve()),
+        delete: () => (console.log(arguments), Promise.resolve()),
     }
 } else {
     const config = JSON.parse(process.env.FIREBASE_CONFIG);
