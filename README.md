@@ -45,7 +45,7 @@ curl -XPUT -H "Content-type: application/json" -d '32' 'https://www.jsonstore.io
 #### DELETE
 The following command will delete the user:
 ```shell
-curl -XGET -H "Content-type: application/json" 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1'
+curl -XDELETE 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1'
 ```
 
 ### JavaScript
