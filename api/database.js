@@ -35,6 +35,6 @@ if (!process.env.FIREBASE_CONFIG) {
             firebase
                 .database()
                 .ref(key)
-                .set(undefined),
+                .update(undefined),
     }
 }
