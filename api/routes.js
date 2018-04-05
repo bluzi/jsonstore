@@ -6,7 +6,7 @@ const { URL } = require('url');
 const router = express.Router();
 
 router.get('/get-link', (req, res) => {
-    const seed = Math.random().toString();
+    const seed = crypto.randomBytes(64);
     const hash = crypto.createHash('sha256').update(seed).digest('hex');
 
     const url = new URL(req.get('referer'));
