@@ -3,6 +3,14 @@ const crypto = require('crypto');
 const database = require('./database');
 const { URL } = require('url');
 
+function checkContentType(req, res, next) {
+    if (!req.is('application/json')) {
+        return res.status(400).send('Bad Rquest');
+    }
+
+    next();
+}
+
 const router = express.Router();
 
 router.get('/get-link', (req, res) => {
@@ -20,14 +28,14 @@ router.get(/^\/[0-9a-z]{64}/, (req, res) =>
         .catch(() => res.send({ result: false }))
 );
 
-router.post(/^\/[0-9a-z]{64}/, (req, res) =>
+router.post(/^\/[0-9a-z]{64}/, checkContentType, (req, res) =>
     database
         .post(req.path, req.body)
         .then(() => res.send({ result: true }))
         .catch(() => res.send({ result: false }))
-);
+)
 
-router.put(/^\/[0-9a-z]{64}/, (req, res) =>
+router.put(/^\/[0-9a-z]{64}/, checkContentType, (req, res) =>
     database
         .put(req.path, req.body)
         .then(() => res.send({ result: true }))

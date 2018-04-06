@@ -9,7 +9,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static(__dirname + '/client/dist'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+  strict: false,
+}));
 app.use(cors());
 
 app.get('/', (req, res) => {
