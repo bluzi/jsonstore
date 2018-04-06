@@ -28,8 +28,10 @@ if (!process.env.FIREBASE_CONFIG) {
         put: (key, data) =>
             firebase
                 .database()
-                .ref(key)
-                .update(data),
+                .ref()
+                .update({
+                    [key]: data,
+                }),
 
         delete: key =>
             firebase
