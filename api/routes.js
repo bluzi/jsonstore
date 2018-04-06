@@ -5,7 +5,7 @@ const { URL } = require('url');
 
 function checkContentType(req, res, next) {
     if (!req.is('application/json')) {
-        return res.status(400).send('Bad Rquest');
+        return res.status(400).send('Bad Request');
     }
 
     next();
