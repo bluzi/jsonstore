@@ -149,6 +149,9 @@ footer a {
 
 /* Media queries for responsive behavior on phone */
 @media only screen and (max-device-width: 480px) {
+  #drift-widget-container {
+    display: none;
+  }
   header .container {
     width: 100%;
   }
@@ -164,8 +167,7 @@ footer a {
 
   footer {
     bottom: 10px;
-    left: 15px;
-    text-align: left;
+    text-align: center;
   }
 
   nav ul {
