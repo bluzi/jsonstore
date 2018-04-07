@@ -24,5 +24,12 @@ app.get('/about', (req, res) => {
 
 app.use(apiRoutes);
 
+app.use((err, req, res) => {
+  res.send({
+    ok: false,
+    error: 'Unexpected server error',
+  });
+})
+
 app.listen(port);
 console.log(`Serving at http://localhost:${port}`);
