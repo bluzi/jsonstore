@@ -33,7 +33,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 #### GET
 The following command will retrieve the user we created earlier:
 ```shell
-curl -XGET -H "Content-type: application/json" 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1'
+curl -XGET 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1'
 ```
 
 #### PUT
