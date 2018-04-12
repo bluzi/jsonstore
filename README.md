@@ -25,7 +25,7 @@ Make sure to replace the URL in the examples to your own endpoint, that can be f
 The following command will create a user in `/users/1`:
 ```shell
 curl -XPOST -H "Content-type: application/json" -d '{
-  "name": "john.snow",
+  "name": "jon.snow",
   "age": 31
 }' 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users/1'
 ```
@@ -56,7 +56,7 @@ fetch('https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e6
     'Content-type': 'application/json'
   },
   method: 'POST',
-  body: { name: 'john snow', age: 31 },
+  body: { name: 'jon snow', age: 31 },
 });
 ```
 
