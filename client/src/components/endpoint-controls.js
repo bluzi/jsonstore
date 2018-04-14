@@ -11,7 +11,7 @@ class EndpointControls extends React.Component {
 
         this.setState({
             loading: false,
-            link: await appService.getLink(),
+            token: await appService.getToken(),
         })
     }
     
@@ -28,11 +28,11 @@ class EndpointControls extends React.Component {
         return (<header>
             <div className="container">
                 <div className="endpoint-controls">
-                    <h1>This Is Your Endpoint</h1>
+                    <h1>This Is Your Token</h1>
 
                     <div className="row">
                         <div className="column column-60">
-                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : this.state.link} readOnly />
+                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : this.state.token} readOnly />
                         </div>
 
                         <div className="column">
