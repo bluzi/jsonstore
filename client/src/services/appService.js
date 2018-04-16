@@ -1,8 +1,8 @@
 class AppService {
-    getLink() {
-        return fetch('/get-link')
+    getToken() {
+        return fetch('/get-token')
             .then(response => response.json())
-            .then(json => json.link);
+            .then(json => json.token);
     }
 }
 

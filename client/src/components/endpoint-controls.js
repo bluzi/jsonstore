@@ -11,7 +11,7 @@ class EndpointControls extends React.Component {
 
         this.setState({
             loading: false,
-            link: await appService.getLink(),
+            token: await appService.getToken(),
         })
     }
     
@@ -25,6 +25,14 @@ class EndpointControls extends React.Component {
     }
 
     render() {
+        let endpoint = null;
+        if (!this.state.loading) {
+            if (location.port) {
+                endpoint = `${location.protocol}//${location.hostname}:${location.port}/${this.state.token}`;
+            } else {
+                endpoint = `${location.protocol}//${location.hostname}/${this.state.token}`;
+            }
+        }
         return (<header>
             <div className="container">
                 <div className="endpoint-controls">
@@ -32,7 +40,7 @@ class EndpointControls extends React.Component {
 
                     <div className="row">
                         <div className="column column-60">
-                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : this.state.link} readOnly />
+                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : endpoint} readOnly />
                         </div>
 
                         <div className="column">

@@ -13,12 +13,10 @@ function checkContentType(req, res, next) {
 
 const router = express.Router();
 
-router.get('/get-link', (req, res) => {
+router.get('/get-token', (req, res) => {
     const seed = crypto.randomBytes(64);
     const hash = crypto.createHash('sha256').update(seed).digest('hex');
-
-    const url = new URL(req.get('referer'));
-    return res.send({ link: `${url.protocol}//${url.hostname}/${hash}/` });
+    return res.send({ token: hash });
 });
 
 router.get(/^\/[0-9a-z]{64}/, (req, res) =>
