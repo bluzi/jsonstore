@@ -25,14 +25,22 @@ class EndpointControls extends React.Component {
     }
 
     render() {
+        let endpoint = null;
+        if (!this.state.loading) {
+            if (location.port) {
+                endpoint = `${location.protocol}//${location.hostname}:${location.port}/${this.state.token}`;
+            } else {
+                endpoint = `${location.protocol}//${location.hostname}/${this.state.token}`;
+            }
+        }
         return (<header>
             <div className="container">
                 <div className="endpoint-controls">
-                    <h1>This Is Your Token</h1>
+                    <h1>This Is Your Endpoint</h1>
 
                     <div className="row">
                         <div className="column column-60">
-                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : this.state.token} readOnly />
+                            <input ref="urlInput" type="text" value={this.state.loading ? 'Loading...' : endpoint} readOnly />
                         </div>
 
                         <div className="column">
