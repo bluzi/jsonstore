@@ -19,12 +19,30 @@ router.get('/get-token', (req, res) => {
     return res.send({ token: hash });
 });
 
-router.get(/^\/[0-9a-z]{64}/, (req, res) =>
-    database
-        .get(req.path)
+function convert(value, type) {
+    const typemap = {
+        'number': Number,
+        'boolean': Boolean,
+        'string': String,
+    };
+    const converter = typemap[type] || String;
+    return converter(value);
+}
+
+router.get(/^\/[0-9a-z]{64}/, (req, res) => {
+    const { key, value, type } = req.query;
+    let reference = null;
+
+    if (key && value) {
+        reference = database.query(req.path, { key, value: convert(value, type) });
+    } else {
+        reference = database.get(req.path, { key, value })
+    }
+
+    reference
         .then(result => res.status(200).send({ result, ok: true }))
         .catch(() => res.status(500).send({ ok: false }))
-);
+});
 
 router.post(/^\/[0-9a-z]{64}/, checkContentType, (req, res) =>
     database

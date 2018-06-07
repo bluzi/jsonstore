@@ -19,6 +19,15 @@ if (!process.env.FIREBASE_CONFIG) {
                 .once('value')
                 .then(snapshot => snapshot.val()),
 
+        query: (key, condition) =>
+            firebase
+                .database()
+                .ref(key)
+                .orderByChild(condition.key)
+                .equalTo(condition.value)
+                .once('value')
+                .then(snapshot => snapshot.val()),
+
         post: (key, data) =>
             firebase
                 .database()
