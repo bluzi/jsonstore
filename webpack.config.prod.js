@@ -1,7 +1,8 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
 
-console.warn('DEVELOPMENT BUILD');
+console.warn('PRODUCTION BUILD');
 
 module.exports = {
     entry: ['./client/src/index.js'],
@@ -17,6 +18,10 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin([
             { from: './client/src/public' },
-        ])
+        ]),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 }

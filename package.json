@@ -6,11 +6,12 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "start": "run-s client:build server:start",
+    "start": "run-s client:build:dev server:start",
     "prod": "PORT=80 npm start",
     "server:start": "node ./server",
-    "client:build": "webpack",
-    "heroku-postbuild": "npm run client:build"
+    "client:build:dev": "webpack",
+    "client:build:prod": "webpack --config webpack.config.prod.js",
+    "heroku-postbuild": "npm run client:build:prod"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -27,6 +28,7 @@
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "cors": "^2.8.4",
     "express": "^4.14.0",
     "firebase": "^4.12.1",
