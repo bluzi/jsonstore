@@ -57,8 +57,6 @@ curl -XGET 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9b
 curl -XGET https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users?orderKey=age&filterValue=20&valueType=number'
 ```
 
-
-
 #### PUT
 The following command will change the age of the user to `32`:
 ```shell
