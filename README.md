@@ -54,7 +54,7 @@ curl -XGET 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9b
 
 - `valueType`: enforcing type of `filterValue`. Type of `filterValue` is guessed by `jsonstore`. If you want to enforce a type, send `string`, `number` or `boolean` as `valueType`. For eg,
 ```shell
-curl -XGET https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users?orderKey=age&filterValue=20&valueType=number'
+curl -XGET 'https://www.jsonstore.io/cf024bb815a93131ce9fed91b1f9dafa43a3c557e9be66e66fd76df5c64f10fe/users?orderKey=age&filterValue=20&valueType=number'
 ```
 
 #### PUT
