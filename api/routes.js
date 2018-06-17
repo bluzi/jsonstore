@@ -19,12 +19,14 @@ router.get('/get-token', (req, res) => {
     return res.send({ token: hash });
 });
 
-router.get(/^\/[0-9a-z]{64}/, (req, res) =>
+router.get(/^\/[0-9a-z]{64}/, (req, res) => {
+    const { orderKey, filterValue, valueType } = req.query;
+
     database
-        .get(req.path)
+        .get(req.path, orderKey, filterValue, valueType)
         .then(result => res.status(200).send({ result, ok: true }))
         .catch(() => res.status(500).send({ ok: false }))
-);
+});
 
 router.post(/^\/[0-9a-z]{64}/, checkContentType, (req, res) =>
     database
